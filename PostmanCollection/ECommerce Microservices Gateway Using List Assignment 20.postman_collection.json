@@ -128,7 +128,7 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"Laptop\",\n    \"price\": 70000\n}"
 						},
 						{
-							"name": "Get Product By ID",
+							"name": "Not Found",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -145,7 +145,7 @@
 							},
 							"status": "Not Found",
 							"code": 404,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "Content-Type",
@@ -307,6 +307,54 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": 1,\n    \"productId\": 1,\n    \"quantity\": 2,\n    \"totalPrice\": 140000\n}"
+						},
+						{
+							"name": "Product Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productId\": 10,\n    \"quantity\": 2\n}"
+								},
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 12 Nov 2025 09:50:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Kestrel"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "Product with ID 10 not found."
 						}
 					]
 				}
